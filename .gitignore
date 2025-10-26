@@ -1,0 +1,6 @@
+#Transaction data
+transactions.json
+
+#Python Cache
+__pycache__/
+*.pyc 

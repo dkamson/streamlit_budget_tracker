@@ -42,11 +42,11 @@ def delete_transaction(transactions, index_to_delete):
     return transactions
 
 
-def edit_transaction(transactions,trans_type,index,new_amount,new_category,new_note):
-    if 0<=index<=len(transactions):
-        transactions[index]['type']=trans_type
+def edit_transaction(transactions,new_type,index,new_amount,new_category,new_note):
+    if 0<=index<len(transactions):
+        transactions[index]['type']=new_type.lower()
         transactions[index]['amount']= new_amount
-        transactions[index]['category']=new_category
-        transactions[index]['note']=new_note
+        transactions[index]['category']=new_category.strip()
+        transactions[index]['note']=new_note.strip() or "No note"
         save_transactions(transactions)
     return transactions
